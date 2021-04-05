@@ -14,33 +14,8 @@ const Server = use('Server')
 */
 const globalMiddleware = [
   'Adonis/Middleware/BodyParser',
-  'Adonis/Middleware/Session',
-  'Adonis/Middleware/Shield',
-  'Adonis/Middleware/AuthInit',
   'App/Middleware/ConvertEmptyStringsToNull',
 ]
-
-/*
-|--------------------------------------------------------------------------
-| Named Middleware
-|--------------------------------------------------------------------------
-|
-| Named middleware is key/value object to conditionally add middleware on
-| specific routes or group of routes.
-|
-| // define
-| {
-|   auth: 'Adonis/Middleware/Auth'
-| }
-|
-| // use
-| Route.get().middleware('auth')
-|
-*/
-const namedMiddleware = {
-  auth: 'Adonis/Middleware/Auth',
-  guest: 'Adonis/Middleware/AllowGuestOnly'
-}
 
 /*
 |--------------------------------------------------------------------------
@@ -53,11 +28,9 @@ const namedMiddleware = {
 |
 */
 const serverMiddleware = [
-  'Adonis/Middleware/Static',
   'Adonis/Middleware/Cors'
 ]
 
 Server
   .registerGlobal(globalMiddleware)
-  .registerNamed(namedMiddleware)
   .use(serverMiddleware)
