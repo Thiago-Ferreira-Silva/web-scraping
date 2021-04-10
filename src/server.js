@@ -21,4 +21,6 @@ app.get('/', async (req, res) => {
 
 // Adicionar a função de fazer backup periódico da anime list de um usuário no projeto web-scraping
 
+// usar um empacotador e atualizar o procfile para produção
+
 app.listen(PORT, () => console.log('Running on PORT: ', PORT))
