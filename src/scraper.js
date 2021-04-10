@@ -14,8 +14,7 @@ function extractDeal(selector) {
     return { rank, title, score }
 }
 
-
-module.exports = async function fetchHTML() {
+async function fetchHTML() {
     try {
         const HTML = (await axios.get(URL)).data
         const selector = cheerio.load(HTML)
@@ -34,3 +33,6 @@ module.exports = async function fetchHTML() {
         return { status: 500, msg: `Error while trying to fetch the URL: ${URL}` }
     }
 }
+
+
+module.exports = { fetchHTML }
