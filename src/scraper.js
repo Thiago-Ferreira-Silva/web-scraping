@@ -24,7 +24,6 @@ async function fetchHTML() {
 
         const data = searchResults.map((i, result) => {
             const elementSelector = selector(result)
-            if (i < 1) console.log(elementSelector)
             return extractDeal(elementSelector)
         }).get()
 

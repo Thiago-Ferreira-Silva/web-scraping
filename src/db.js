@@ -7,7 +7,7 @@ function addNewData(data) {
 
         collection.insertOne({ data, date: Date.now() }, (err, result) => {
             if (err) return console.log(err)
-            return console.log(result)
+            return console.log('ok')
         })
 
         client.close()
