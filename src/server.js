@@ -15,8 +15,6 @@ app.get('/', async (req, res) => {
 
 // implementar app.get('/data') com histórico de dados e talvez alguma coisa de estatística
 
-// criar um banco de dados e armazenar o histórico do ranking, atualizando as informações uma vez por dia ou semana com o node cron
-
 // escrever testes
 
 // Adicionar a função de fazer backup periódico da anime list de um usuário no projeto web-scraping
