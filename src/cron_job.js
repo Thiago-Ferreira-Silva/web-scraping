@@ -9,4 +9,8 @@ function startJob() {
     })
 }
 
-module.exports = { startJob }
+function keepActive() {
+    cron.schedule('*/30 * * * *', () => console.log("I'm online!"))
+}
+
+module.exports = { startJob, keepActive }

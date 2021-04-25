@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8081
 const app = express()
 
 cron.startJob()
+cron.keepActive()
 
 app.get('/', async (req, res) => {
     const response = await scraper.fetchHTML()
