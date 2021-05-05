@@ -11,7 +11,13 @@ function extractDeal(selector) {
     const score = selector
         .find('td.score > div.js-top-ranking-score-col > span').text().trim()
 
-    return { rank, title, score }
+    const url = selector
+        .find('td.title > a.hoverinfo_trigger').attr('href')
+
+    const image = selector
+        .find('td.title > a.hoverinfo_trigger > img').attr('data-src')
+
+    return { rank, title, score, url, image }
 }
 
 async function fetchHTML() {
@@ -32,6 +38,6 @@ async function fetchHTML() {
         return { status: 500, msg: `Error while trying to fetch the URL: ${URL}` }
     }
 }
-
+// talvez adicionar isso ao banco e consumir de lá na aplicação frontend
 
 module.exports = { fetchHTML }
